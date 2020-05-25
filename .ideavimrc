@@ -1,0 +1,48 @@
+set hlsearch                      " highlight search occurrences
+set ignorecase                    " ignore case in search patterns
+set smartcase                     " no ignore case when pattern is uppercase
+set incsearch                     " show search results while typing
+set wrapscan                      " searches wrap around the end of the file
+
+set gdefault                      " substitute all occurrences in line per default
+set history=10000                 " keep x lines of command line history
+set scrolloff=5 sidescrolloff=10  " keep some lines before and after the cursor visible
+set clipboard=unnamedplus,unnamed,ideaput " integrate with system clipboard
+
+" set multiple-cursors
+set commentary
+set surround                      " emulate vim-surround plugin
+
+
+" set <leader> to <space>
+let mapleader = " "
+
+nnoremap L $
+nnoremap H ^
+noremap ; :
+
+nnoremap gd :action GotoDeclaration
+
+nnoremap ,e :action SearchEverywhere<CR>
+nnoremap ,g :action FindInPath<CR>
+nnoremap ,s :action FileStructurePopup<CR>
+
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gs :action GotoSuperMethod<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gb :action JumpToLastChange<CR>
+
+nnoremap U :action FindUsages<CR>
+nnoremap R :action RenameElement<CR>
+
+nnoremap == :action ReformatCode<CR>
+vnoremap == :action ReformatCode<CR>
+
+nnoremap cc :action CommentByLineComment<CR>
+vnoremap cc :action CommentByLineComment<CR>
+
+nnoremap <C-CR> :action ShowIntentionActions<CR>
+
+nnoremap ,a :action GotoAction<CR>
+vnoremap ,a :action GotoAction<CR>
+
